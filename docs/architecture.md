@@ -38,3 +38,68 @@ Eventually4
                          ┌─────────────┴─────────────┐
                          ▼                           ▼
                   Question Generation         Explanation Generation
+
+
+                 STUDENT
+                    │
+                    ▼
+               ATTEMPT DATA
+                    │
+                    ▼
+              ┌─────────────┐
+              │   MASTERY   │
+              │             │
+              │ Linear  .82 │
+              │ Trees   .61 │
+              │ NN      .43 │
+              └──────┬──────┘
+                     │
+                     ▼
+              RECOMMENDATION
+                  ENGINE
+                     │
+             ┌───────┴────────┐
+             ▼                ▼
+        Which concept?    What difficulty?
+             │                │
+             └───────┬────────┘
+                     ▼
+                  QUESTION
+                     │
+                     ▼
+                  STUDENT
+
+
+┌──────────────────────────────┐
+│       STUDENT MODEL          │
+│                              │
+│ Concept → P(Mastered)        │
+└──────────────┬───────────────┘
+               │
+               ▼
+       ┌───────────────┐
+       │ Recommendation│
+       │    Engine     │
+       └───────┬───────┘
+               │
+       ┌───────┴────────┐
+       ▼                ▼
+   Concept           Difficulty
+       │                │
+       └───────┬────────┘
+               ▼
+            Question
+               │
+               ▼
+            Student
+               │
+               ▼
+             Answer
+               │
+               ▼
+        Bayesian Update
+               │
+               ▼
+       New P(Mastered)
+               │
+               └───────────────→ repeat
