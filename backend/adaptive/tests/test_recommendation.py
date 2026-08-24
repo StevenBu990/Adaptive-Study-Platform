@@ -1,6 +1,7 @@
 from adaptive.recommendation import (
     select_concept,
     select_difficulty,
+    select_question,
     recommend_question
 )
 
@@ -34,7 +35,27 @@ def test_recommend_question():
         "neural_networks": 0.60
     }
 
-    concept, difficulty = recommend_question(masteries)
+    question = recommend_question(masteries)
 
-    assert concept == "gradient_descent"
-    assert difficulty == "easy"
+    assert question["concept"] == "gradient_descent"
+    assert question["difficulty"] == "easy"
+
+def test_select_question():
+    questions = [
+        {
+            "id": 1,
+            "concept": "gradient_descent",
+            "difficulty": "easy",
+            "question": "Test question",
+            "choices": ["A", "B", "C", "D"],
+            "answer": 0
+        }
+    ]
+
+    question = select_question(
+        questions,
+        "gradient_descent",
+        "easy"
+    )
+
+    assert question["id"] == 1

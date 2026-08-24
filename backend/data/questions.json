@@ -3,44 +3,124 @@
     "id": 1,
     "concept": "linear_regression",
     "difficulty": "easy",
-    "question": "What is the main goal of linear regression?",
+    "question": "What is the main purpose of linear regression?",
     "choices": [
-      "Classify data into categories",
       "Predict a continuous value",
-      "Cluster similar data points",
-      "Reduce the number of features"
+      "Group data into clusters",
+      "Encrypt a dataset",
+      "Remove all features"
     ],
-    "answer": 1
+    "answer": 0
   },
   {
     "id": 2,
     "concept": "linear_regression",
-    "difficulty": "medium",
-    "question": "What does the slope of a linear regression line represent?",
+    "difficulty": "easy",
+    "question": "In a simple linear regression equation y = mx + b, what does x typically represent?",
     "choices": [
-      "The predicted value",
-      "The change in the target for a one-unit change in the feature",
-      "The number of observations",
-      "The model's error"
+      "The predicted output",
+      "The input feature",
+      "The model error",
+      "The intercept"
     ],
     "answer": 1
   },
   {
     "id": 3,
     "concept": "linear_regression",
-    "difficulty": "hard",
-    "question": "Which assumption is commonly associated with ordinary least squares linear regression?",
+    "difficulty": "easy",
+    "question": "What does the intercept represent in a linear regression equation?",
     "choices": [
-      "The relationship between predictors and target is linear",
-      "All predictors must be categorical",
-      "The target must be binary",
-      "The dataset must contain exactly two features"
+      "The value of y when x is zero",
+      "The slope of the line",
+      "The number of features",
+      "The prediction error"
     ],
     "answer": 0
   },
 
   {
     "id": 4,
+    "concept": "linear_regression",
+    "difficulty": "medium",
+    "question": "What does a positive slope indicate in a linear regression model?",
+    "choices": [
+      "The target tends to decrease as the feature increases",
+      "The target tends to increase as the feature increases",
+      "The model has no relationship between the variables",
+      "The model always predicts zero"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 5,
+    "concept": "linear_regression",
+    "difficulty": "medium",
+    "question": "What is the purpose of the least squares method in linear regression?",
+    "choices": [
+      "Maximize the number of features",
+      "Minimize the sum of squared prediction errors",
+      "Remove outliers automatically",
+      "Increase the dataset size"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 6,
+    "concept": "linear_regression",
+    "difficulty": "medium",
+    "question": "If a linear regression model has a very high R-squared value, what does that generally indicate?",
+    "choices": [
+      "The model explains a large portion of the variance in the target",
+      "The model has no predictive power",
+      "The model must be underfitting",
+      "The target variable is categorical"
+    ],
+    "answer": 0
+  },
+
+  {
+    "id": 7,
+    "concept": "linear_regression",
+    "difficulty": "hard",
+    "question": "Which issue can occur when two predictor variables are highly correlated with each other?",
+    "choices": [
+      "Multicollinearity",
+      "Data encryption",
+      "Underflow",
+      "Label encoding"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 8,
+    "concept": "linear_regression",
+    "difficulty": "hard",
+    "question": "Why can influential outliers be problematic in ordinary least squares regression?",
+    "choices": [
+      "They can strongly affect the fitted regression coefficients",
+      "They always increase the dataset size",
+      "They remove the intercept automatically",
+      "They guarantee a higher R-squared"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 9,
+    "concept": "linear_regression",
+    "difficulty": "hard",
+    "question": "Which assumption is commonly associated with ordinary least squares linear regression?",
+    "choices": [
+      "The relationship between predictors and the target is approximately linear",
+      "Every predictor must be categorical",
+      "The target must always be binary",
+      "The dataset must contain exactly two features"
+    ],
+    "answer": 0
+  },
+
+  {
+    "id": 10,
     "concept": "gradient_descent",
     "difficulty": "easy",
     "question": "What is the primary goal of gradient descent?",
@@ -48,39 +128,119 @@
       "Maximize the loss function",
       "Minimize the loss function",
       "Increase the number of features",
-      "Randomize model parameters"
+      "Randomize the model parameters"
     ],
     "answer": 1
   },
   {
-    "id": 5,
+    "id": 11,
     "concept": "gradient_descent",
-    "difficulty": "medium",
-    "question": "What determines the size of a parameter update in gradient descent?",
+    "difficulty": "easy",
+    "question": "What does the gradient tell us during gradient descent?",
     "choices": [
-      "The learning rate and gradient",
-      "Only the number of training examples",
-      "The test accuracy",
+      "The direction of greatest increase of the function",
+      "The number of training examples",
+      "The final model accuracy",
       "The number of classes"
     ],
     "answer": 0
   },
   {
-    "id": 6,
+    "id": 12,
     "concept": "gradient_descent",
-    "difficulty": "hard",
-    "question": "What can happen if the learning rate is too large?",
+    "difficulty": "easy",
+    "question": "What is a learning rate used for in gradient descent?",
     "choices": [
-      "The model always converges immediately",
-      "The optimization may overshoot the minimum",
-      "The gradient becomes exactly zero",
-      "The training dataset becomes smaller"
+      "Control the size of parameter updates",
+      "Determine the number of features",
+      "Calculate the dataset size",
+      "Choose the test set"
     ],
-    "answer": 1
+    "answer": 0
   },
 
   {
-    "id": 7,
+    "id": 13,
+    "concept": "gradient_descent",
+    "difficulty": "medium",
+    "question": "What happens when the learning rate is extremely small?",
+    "choices": [
+      "Training may take a very long time to converge",
+      "The model always diverges",
+      "The loss becomes infinite immediately",
+      "The gradient becomes undefined"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 14,
+    "concept": "gradient_descent",
+    "difficulty": "medium",
+    "question": "Why is the gradient used to update model parameters?",
+    "choices": [
+      "It indicates how the loss changes with respect to the parameters",
+      "It determines how many examples are in the dataset",
+      "It removes incorrect labels",
+      "It converts categorical features into numbers"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 15,
+    "concept": "gradient_descent",
+    "difficulty": "medium",
+    "question": "What can happen if the learning rate is too large?",
+    "choices": [
+      "The optimization may overshoot the minimum",
+      "The model always converges immediately",
+      "The dataset becomes smaller",
+      "The gradient becomes permanently zero"
+    ],
+    "answer": 0
+  },
+
+  {
+    "id": 16,
+    "concept": "gradient_descent",
+    "difficulty": "hard",
+    "question": "Why can gradient descent converge to different solutions depending on initialization?",
+    "choices": [
+      "The optimization landscape may contain multiple local minima or stationary points",
+      "The dataset changes every time",
+      "The learning rate is always zero",
+      "Gradients do not depend on model parameters"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 17,
+    "concept": "gradient_descent",
+    "difficulty": "hard",
+    "question": "What is one advantage of mini-batch gradient descent over full-batch gradient descent?",
+    "choices": [
+      "It can reduce computational cost per parameter update",
+      "It always finds the global minimum",
+      "It completely eliminates gradient noise",
+      "It requires no training data"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 18,
+    "concept": "gradient_descent",
+    "difficulty": "hard",
+    "question": "If the gradient magnitude becomes extremely small during optimization, what problem might occur?",
+    "choices": [
+      "Parameter updates may become very small and learning can slow down",
+      "The dataset automatically doubles in size",
+      "The learning rate becomes infinite",
+      "The loss must immediately become zero"
+    ],
+    "answer": 0
+  },
+
+  {
+    "id": 19,
     "concept": "neural_networks",
     "difficulty": "easy",
     "question": "What is the purpose of an activation function in a neural network?",
@@ -93,29 +253,109 @@
     "answer": 0
   },
   {
-    "id": 8,
+    "id": 20,
+    "concept": "neural_networks",
+    "difficulty": "easy",
+    "question": "What is a neuron in a neural network?",
+    "choices": [
+      "A computational unit that combines inputs and applies an activation function",
+      "A type of database",
+      "A training dataset",
+      "A programming language"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 21,
+    "concept": "neural_networks",
+    "difficulty": "easy",
+    "question": "What are the adjustable parameters of a neural network commonly called?",
+    "choices": [
+      "Weights and biases",
+      "Rows and columns",
+      "Classes and labels",
+      "Features and datasets"
+    ],
+    "answer": 0
+  },
+
+  {
+    "id": 22,
     "concept": "neural_networks",
     "difficulty": "medium",
     "question": "What is backpropagation primarily used for?",
     "choices": [
-      "Initializing the dataset",
       "Computing gradients for updating network weights",
-      "Selecting the test set",
-      "Removing hidden layers"
+      "Creating the training dataset",
+      "Removing hidden layers",
+      "Selecting the test set"
     ],
-    "answer": 1
+    "answer": 0
   },
   {
-    "id": 9,
+    "id": 23,
+    "concept": "neural_networks",
+    "difficulty": "medium",
+    "question": "Why are hidden layers useful in a neural network?",
+    "choices": [
+      "They allow the network to learn intermediate representations",
+      "They guarantee zero training error",
+      "They eliminate the need for activation functions",
+      "They prevent the model from learning"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 24,
+    "concept": "neural_networks",
+    "difficulty": "medium",
+    "question": "What is overfitting in a neural network?",
+    "choices": [
+      "When the model learns the training data too closely and performs poorly on unseen data",
+      "When the model has no parameters",
+      "When the training dataset is too small to load",
+      "When the model cannot calculate gradients"
+    ],
+    "answer": 0
+  },
+
+  {
+    "id": 25,
     "concept": "neural_networks",
     "difficulty": "hard",
-    "question": "Why can adding more layers to a neural network make optimization difficult?",
+    "question": "Why can very deep neural networks experience vanishing gradients?",
     "choices": [
-      "The network cannot contain weights",
-      "Gradients can become very small or very large",
-      "The training data disappears",
-      "Activation functions stop existing"
+      "Gradients can become extremely small as they are propagated through many layers",
+      "The dataset automatically becomes smaller",
+      "The network has too few parameters",
+      "The learning rate must always be zero"
     ],
-    "answer": 1
+    "answer": 0
+  },
+  {
+    "id": 26,
+    "concept": "neural_networks",
+    "difficulty": "hard",
+    "question": "Why can ReLU often help reduce the vanishing gradient problem compared with sigmoid activations?",
+    "choices": [
+      "Its derivative does not become extremely small for positive inputs",
+      "It has no parameters",
+      "It always produces values between zero and one",
+      "It removes the need for backpropagation"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 27,
+    "concept": "neural_networks",
+    "difficulty": "hard",
+    "question": "What is one reason normalization techniques can improve neural network training?",
+    "choices": [
+      "They can help keep activations within more manageable ranges",
+      "They eliminate all training errors",
+      "They guarantee the global optimum",
+      "They remove every parameter from the network"
+    ],
+    "answer": 0
   }
 ]
