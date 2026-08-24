@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "concept": "linear_regression",
+    "difficulty": "easy",
+    "question": "What is the main goal of linear regression?",
+    "choices": [
+      "Classify data into categories",
+      "Predict a continuous value",
+      "Cluster similar data points",
+      "Reduce the number of features"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 2,
+    "concept": "linear_regression",
+    "difficulty": "medium",
+    "question": "What does the slope of a linear regression line represent?",
+    "choices": [
+      "The predicted value",
+      "The change in the target for a one-unit change in the feature",
+      "The number of observations",
+      "The model's error"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 3,
+    "concept": "linear_regression",
+    "difficulty": "hard",
+    "question": "Which assumption is commonly associated with ordinary least squares linear regression?",
+    "choices": [
+      "The relationship between predictors and target is linear",
+      "All predictors must be categorical",
+      "The target must be binary",
+      "The dataset must contain exactly two features"
+    ],
+    "answer": 0
+  },
+
+  {
+    "id": 4,
+    "concept": "gradient_descent",
+    "difficulty": "easy",
+    "question": "What is the primary goal of gradient descent?",
+    "choices": [
+      "Maximize the loss function",
+      "Minimize the loss function",
+      "Increase the number of features",
+      "Randomize model parameters"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 5,
+    "concept": "gradient_descent",
+    "difficulty": "medium",
+    "question": "What determines the size of a parameter update in gradient descent?",
+    "choices": [
+      "The learning rate and gradient",
+      "Only the number of training examples",
+      "The test accuracy",
+      "The number of classes"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 6,
+    "concept": "gradient_descent",
+    "difficulty": "hard",
+    "question": "What can happen if the learning rate is too large?",
+    "choices": [
+      "The model always converges immediately",
+      "The optimization may overshoot the minimum",
+      "The gradient becomes exactly zero",
+      "The training dataset becomes smaller"
+    ],
+    "answer": 1
+  },
+
+  {
+    "id": 7,
+    "concept": "neural_networks",
+    "difficulty": "easy",
+    "question": "What is the purpose of an activation function in a neural network?",
+    "choices": [
+      "Introduce non-linearity",
+      "Remove all weights",
+      "Store the training dataset",
+      "Increase the batch size"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 8,
+    "concept": "neural_networks",
+    "difficulty": "medium",
+    "question": "What is backpropagation primarily used for?",
+    "choices": [
+      "Initializing the dataset",
+      "Computing gradients for updating network weights",
+      "Selecting the test set",
+      "Removing hidden layers"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 9,
+    "concept": "neural_networks",
+    "difficulty": "hard",
+    "question": "Why can adding more layers to a neural network make optimization difficult?",
+    "choices": [
+      "The network cannot contain weights",
+      "Gradients can become very small or very large",
+      "The training data disappears",
+      "Activation functions stop existing"
+    ],
+    "answer": 1
+  }
+]
