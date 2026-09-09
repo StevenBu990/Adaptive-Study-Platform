@@ -1,8 +1,8 @@
 from adaptive.recommendation import (
     select_concept,
     select_difficulty,
-    select_question,
-    recommend_question
+    recommend_question,
+    select_question
 )
 
 
@@ -40,6 +40,7 @@ def test_recommend_question():
     assert question["concept"] == "gradient_descent"
     assert question["difficulty"] == "easy"
 
+
 def test_select_question():
     questions = [
         {
@@ -59,3 +60,57 @@ def test_select_question():
     )
 
     assert question["id"] == 1
+
+
+def test_select_question_avoids_seen_questions():
+    questions = [
+        {
+            "id": 1,
+            "concept": "linear_regression",
+            "difficulty": "medium",
+            "question": "Question 1",
+            "choices": ["A", "B", "C", "D"],
+            "answer": 0
+        },
+        {
+            "id": 2,
+            "concept": "linear_regression",
+            "difficulty": "medium",
+            "question": "Question 2",
+            "choices": ["A", "B", "C", "D"],
+            "answer": 0
+        }
+    ]
+
+    result = select_question(
+        questions,
+        "linear_regression",
+        "medium",
+        seen_questions={1}
+    )
+
+    assert result["id"] == 2
+
+
+def test_select_question_fails_when_all_questions_seen():
+    questions = [
+        {
+            "id": 1,
+            "concept": "linear_regression",
+            "difficulty": "medium",
+            "question": "Question 1",
+            "choices": ["A", "B", "C", "D"],
+            "answer": 0
+        }
+    ]
+
+    try:
+        select_question(
+            questions,
+            "linear_regression",
+            "medium",
+            seen_questions={1}
+        )
+        assert False
+    except ValueError:
+        assert True
