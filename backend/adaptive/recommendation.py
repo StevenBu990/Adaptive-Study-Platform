@@ -30,20 +30,21 @@ def select_question(
     if seen_questions is None:
         seen_questions = set()
 
-    matching_questions = [
-        question
-        for question in questions
-        if question["concept"] == concept
-        and question["difficulty"] == difficulty
-        and question["id"] not in seen_questions
-    ]
+    for fallback_difficulty in get_difficulty_fallbacks(difficulty):
+        matching_questions = [
+            question
+            for question in questions
+            if question["concept"] == concept
+            and question["difficulty"] == fallback_difficulty
+            and question["id"] not in seen_questions
+        ]
 
-    if not matching_questions:
-        raise ValueError(
-            f"No questions found for {concept} at {difficulty} difficulty."
-        )
+        if matching_questions:
+            return random.choice(matching_questions)
 
-    return random.choice(matching_questions)
+    raise ValueError(
+        f"No questions found for {concept} at any available difficulty."
+    )
 
 
 def select_concept(masteries: dict) -> str:
@@ -57,3 +58,11 @@ def select_difficulty(mastery: float) -> str:
         return "medium"
     else:
         return "hard"
+    
+def get_difficulty_fallbacks(difficulty: str) -> list:
+    if difficulty == "easy":
+        return ["easy", "medium", "hard"]
+    elif difficulty == "medium":
+        return ["medium", "easy", "hard"]
+    else:
+        return ["hard", "medium", "easy"]
