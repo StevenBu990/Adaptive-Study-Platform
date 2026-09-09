@@ -25,7 +25,10 @@ answers = [
 
 
 for correct in answers:
-    question = recommend_question(student.mastery)
+    question = recommend_question(
+        student.mastery,
+        student.seen_questions
+    )
 
     concept = question["concept"]
     difficulty = question["difficulty"]

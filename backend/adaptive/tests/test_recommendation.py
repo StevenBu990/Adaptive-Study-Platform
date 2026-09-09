@@ -91,7 +91,6 @@ def test_select_question_avoids_seen_questions():
 
     assert result["id"] == 2
 
-
 def test_select_question_fails_when_all_questions_seen():
     questions = [
         {
@@ -114,3 +113,20 @@ def test_select_question_fails_when_all_questions_seen():
         assert False
     except ValueError:
         assert True
+
+
+def test_recommend_question_avoids_seen_questions():
+    masteries = {
+        "linear_regression": 0.50,
+        "gradient_descent": 0.50,
+        "neural_networks": 0.50
+    }
+
+    seen_questions = {1, 2, 3}
+
+    question = recommend_question(
+        masteries,
+        seen_questions
+    )
+
+    assert question["id"] not in seen_questions
