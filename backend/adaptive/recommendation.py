@@ -8,12 +8,17 @@ masteries = {
 }
 
 
-def recommend_question(masteries: dict) -> dict:
+def recommend_question(masteries: dict, seen_questions=None) -> dict:
     questions = load_questions()
     concept = select_concept(masteries)
     difficulty = select_difficulty(masteries[concept])
 
-    return select_question(questions, concept, difficulty)
+    return select_question(
+        questions,
+        concept,
+        difficulty,
+        seen_questions
+    )
 
 
 def select_question(
