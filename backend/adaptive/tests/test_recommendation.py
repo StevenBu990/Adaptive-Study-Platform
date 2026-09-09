@@ -2,7 +2,8 @@ from adaptive.recommendation import (
     select_concept,
     select_difficulty,
     recommend_question,
-    select_question
+    select_question,
+    get_difficulty_fallbacks
 )
 
 
@@ -130,3 +131,76 @@ def test_recommend_question_avoids_seen_questions():
     )
 
     assert question["id"] not in seen_questions
+
+def test_difficulty_fallbacks():
+    assert get_difficulty_fallbacks("easy") == ["easy", "medium", "hard"]
+    assert get_difficulty_fallbacks("medium") == ["medium", "easy", "hard"]
+    assert get_difficulty_fallbacks("hard") == ["hard", "medium", "easy"]
+
+
+def test_select_question_falls_back_to_next_difficulty():
+    questions = [
+        {
+            "id": 1,
+            "concept": "gradient_descent",
+            "difficulty": "easy",
+            "question": "Easy question",
+            "choices": ["A", "B", "C", "D"],
+            "answer": 0
+        },
+        {
+            "id": 2,
+            "concept": "gradient_descent",
+            "difficulty": "medium",
+            "question": "Medium question",
+            "choices": ["A", "B", "C", "D"],
+            "answer": 0
+        }
+    ]
+
+    result = select_question(
+        questions,
+        "gradient_descent",
+        "easy",
+        seen_questions={1}
+    )
+
+    assert result["id"] == 2
+
+
+def test_select_question_falls_back_to_hard():
+    questions = [
+        {
+            "id": 1,
+            "concept": "gradient_descent",
+            "difficulty": "easy",
+            "question": "Easy question",
+            "choices": ["A", "B", "C", "D"],
+            "answer": 0
+        },
+        {
+            "id": 2,
+            "concept": "gradient_descent",
+            "difficulty": "medium",
+            "question": "Medium question",
+            "choices": ["A", "B", "C", "D"],
+            "answer": 0
+        },
+        {
+            "id": 3,
+            "concept": "gradient_descent",
+            "difficulty": "hard",
+            "question": "Hard question",
+            "choices": ["A", "B", "C", "D"],
+            "answer": 0
+        }
+    ]
+
+    result = select_question(
+        questions,
+        "gradient_descent",
+        "easy",
+        seen_questions={1, 2}
+    )
+
+    assert result["id"] == 3
