@@ -1,12 +1,13 @@
 from adaptive.mastery import update_mastery
 from adaptive.recommendation import recommend_question
+from adaptive.student import StudentState
 
 
-student_mastery = {
+student = StudentState({
     "linear_regression": 0.50,
     "gradient_descent": 0.50,
     "neural_networks": 0.50
-}
+})
 
 
 answers = [
@@ -24,12 +25,12 @@ answers = [
 
 
 for correct in answers:
-    question = recommend_question(student_mastery)
+    question = recommend_question(student.mastery)
 
     concept = question["concept"]
     difficulty = question["difficulty"]
 
-    old_mastery = student_mastery[concept]
+    old_mastery = student.mastery[concept]
 
     new_mastery = update_mastery(
         old_mastery,
@@ -37,13 +38,11 @@ for correct in answers:
         difficulty
     )
 
-    student_mastery[concept] = new_mastery
+    student.mastery[concept] = new_mastery
+    student.mark_question_seen(question["id"])
 
     print(
-        f"\nQuestion #{question['id']}"
-    )
-
-    print(
+        f"Question #{question['id']} | "
         f"Concept: {concept} | "
         f"Difficulty: {difficulty}"
     )
